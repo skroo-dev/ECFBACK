@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <ul class="nav navbar-nav">
+       {% for nav in navbar %}
+		<li class="nav-item">
+			<a class="nav-link {% if loop.index == 1 %}active{% endif %}" href="{{nav.url}}" title="{{nav.title}}">{{nav.text}}</a>
+		</li>
+		{% endfor %}  
+    </ul>
+</nav>

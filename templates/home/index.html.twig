@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+	{% include "parts/banniere.html.twig" %}
+
+
+	<div class="container mt-5">
+
+		<div class="row">
+			{% for produit in produits %}
+
+				<div class="card" style="width: 18rem;">
+					<img src="{{produit.image}}" class="card-img-top" alt="photo produit">
+					<div class="card-body">
+						<h5 class="card-title">{{produit.nom}}</h5>
+						<p class="card-text">{{produit.descriptionCourte}}</p>
+						<p class="card-text">
+							<strong>{{produit.tarif}}
+								€
+							</strong>
+						</p>
+                        <p class="card-text">{{produit.reference}}</p>
+						<a href="produit/{{produit.id}}" class="btn btn-primary align-self-end">commander</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+{% endblock %}

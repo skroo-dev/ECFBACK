@@ -1,0 +1,20 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+
+  
+    <br>
+    <div class="container">
+        <div class="mt-5">
+            <h1>panier :</h1>
+            <h2>nombre d'articles :  {{app.session.get('panier')}}  </h2>
+             <h2> quantité : {{app.session.get('panierQuantité')}}  </h2>
+       
+        </div>
+    </div>
+
+
+{% endblock %}
